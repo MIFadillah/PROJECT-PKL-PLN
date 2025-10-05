@@ -12,7 +12,7 @@
         </div>
         <div>
             @if (auth()->user()->is_tugas==true)
-            <a href="#" class="btn btn-sm btn-danger" target='__blank'>
+            <a href="{{ route('tugasPdf') }}" class="btn btn-sm btn-danger" target='__blank'>
                 <i class="fas fa-file-pdf mr-2"></i>
                 PDF
             </a>
