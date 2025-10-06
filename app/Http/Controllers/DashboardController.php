@@ -13,6 +13,7 @@ class DashboardController extends Controller
             'title'          => "Dashboard",
             'menuDashboard'  => "active",
             "jumlahUser"     => User::count(),
+            "jumlahAdmin"    => User::where('jabatan', 'Admin')->count(),
         );
 
         return view('dashboard', $data);
