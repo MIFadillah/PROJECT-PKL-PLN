@@ -10,11 +10,12 @@ class DashboardController extends Controller
     public function index()
     {
         $data = array(
-            'title'          => "Dashboard",
-            'menuDashboard'  => "active",
-            "jumlahUser"     => User::count(),
-            "jumlahAdmin"    => User::where('jabatan', 'Admin')->count(),
-            "jumlahKaryawan"    => User::where('jabatan', 'Karyawan')->count(),
+            'title'               => "Dashboard",
+            'menuDashboard'       => "active",
+            "jumlahUser"          => User::count(),
+            "jumlahAdmin"         => User::where('jabatan', 'Admin')->count(),
+            "jumlahKaryawan"      => User::where('jabatan', 'Karyawan')->count(),
+            "jumlahDitugaskan"    => User::where('jabatan', 'Karyawan')->where('is_tugas', True)->count(),
         );
 
         return view('dashboard', $data);
